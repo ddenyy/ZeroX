@@ -1,0 +1,22 @@
+
+/*блок кнопки*/
+@import  url("./blocks/page/page.css");
+/*=====================================*/
+
+/*блок board*/
+@import url("./blocks/board/board.css");
+@import url("./blocks/board/__ceil/ceil.css");
+/*=====================================*/
+
+
+/*блок кнопки*/
+@import url("./blocks/buttons/_start/_start.css");
+@import url("./blocks/buttons/__button-exit_winner/popup__button-exit_winner.css");
+/*=====================================*/
+
+/*блок popup*/
+@import url("./blocks/popup/popup.css");
+@import url("./blocks/popup/_opened/popup_opened.css");
+@import url("./blocks/popup/__window/popup__window.css");
+@import url("./blocks/popup/__title/popup__title.css");
+/*=====================================*/

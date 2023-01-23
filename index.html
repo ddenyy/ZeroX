@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="тренировочная игра" />
+    <meta name="keywords" content="html, css, grid, flex, frontend, js, ZeroX, адаптивная вёрстка" />
+    <meta name="author" content="Денис Осипов" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+    <title>ZeroX</title>
+</head>
+<body class="page">
+    <div class="page__container">
+        <header class="header">
+            <h2>Выберете с кем вы будете играть</h2>
+            <nav>
+                <p><input type="radio" name="choicePlay" value="computer"> С компьютером</p>
+                <p><input type="radio" name="choicePlay" value="human"> С человеком</p>
+            </nav>
+        </header>
+        <main class="content">
+            <section class="board">
+                <div class="ceil ceil_left-top" id="1"></div>
+                <div class="ceil" id="2"></div>
+                <div class="ceil ceil_right-top" id="3"></div>
+
+                <div class="ceil" id="4"></div>
+                <div class="ceil" id="5"></div>
+                <div class="ceil" id="6"></div>
+
+                <div class="ceil ceil_left-bottom" id="7"></div>
+                <div class="ceil" id="8"></div>
+                <div class="ceil ceil_right-bottom" id="9"></div>
+            </section>
+            <button class="button_start" onclick="startGame()">Play</button>
+        </main>
+        <footer>
+            <p class="footer__text">&copy; 2023 ZeroX</p>
+        </footer>
+        <div class="popup popup_winner popup_opened">
+            <div class="popup__window">
+                <button type="button" class="popup__button-exit_winner"></button>
+                <form id="winner-form" class="form popup__content" novalidate>
+                    <h2 class="popup__title">Играем ещё раз ?</h2>
+                    <fieldset class="popup__contact-info">
+                        <p><input name="user-choice" type="radio" class="popup__input" value="true"/>да</p>
+                        <p><input name="user-choice" type="radio" class="popup__input" value="false"/>Нет</p>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="./dist/index.js"></script>
+</html>
