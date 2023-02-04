@@ -1,10 +1,54 @@
 .button_start {
+    padding: 0;
+    border: none;
+    font: inherit;
+    background-color: transparent;
     margin-top: 50px;
     margin-left: 5px;
-    border: 1px solid black;
-    border-radius: 20%;
-    font-size: 30px;
-    color: inherit;
-    background-color: transparent;
+    border-bottom: 2px solid #ffffff;
     cursor: pointer;
+    font-size: 40px;
+    color: #E1F5FE;
+    text-transform: uppercase;
+}
+
+
+.button_start_active {
+    text-decoration-color: #39D614;
+    animation: neon-4 5s steps(1, start) infinite reverse;
+    border-color: #39D614;
+}
+
+@keyframes neon-4 {
+    0%{
+        color: #39D614;
+        text-shadow: 0 0 7px #39D614, 0 0 8px #39D614;
+    }
+    80%{
+        color: #39D614;
+        text-shadow: 0 0 6px #39D614,0 0 10px #39D614,0 0 50px #39D614;
+    }
+    81%{
+        color: #39D614;
+        text-shadow: 0 0 6px #39D614,0 0 10px #39D614,0 0 50px #39D614;
+    }
+    82%{color: #39D614;
+        text-shadow: 0 0 7px #398E14, 0 0 8px #398E14;
+    }
+    83%{
+        color: #39D614;
+        text-shadow: 0 0 6px #398E14,0 0 10px #39D614,0 0 50px #39D614;
+    }
+    84%{
+        color: #39D614;
+        text-shadow: 0 0 7px #39D614, 0 0 8px #39D614;
+    }
+    85%{
+        color: #39D614;
+        text-shadow: 0 0 6px #39D614,0 0 10px #39D614,0 0 50px #39D614;
+    }
+    100%{
+        color: #39D614;
+        text-shadow: 0 0 7px #39D614,0 0 8px #39D614;
+    }
 }

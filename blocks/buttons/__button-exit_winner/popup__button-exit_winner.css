@@ -18,6 +18,7 @@
     transition: opacity 0.3s linear;
 }
 
+
 @media screen and (max-width: 539px) {
     .popup__button-exit {
         width: 20px;

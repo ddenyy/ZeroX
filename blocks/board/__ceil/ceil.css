@@ -3,14 +3,28 @@
     padding: 0;
     width: 100px;
     height: 100px;
-    border: 2px solid black;
+    border-radius: 30%;
     text-align: center;
     justify-content: center;
     line-height: 90px;
     font-size: 56px;
+    box-shadow: 0px 1px 2px 0px #000000,
+    1px 2px 4px 0px #000000,
+    1px 1px 8px 0px #000000,
+    1px 1px 25px 0px #000000;
+    text-decoration-color: lawngreen;
+
 }
 
-.ceil:hover {
+.ceil_active {
+    box-shadow: 0px 1px 2px 0px #FFFFFF,
+    1px 2px 4px 0px #434343,
+    1px 1px 8px 0px #FFFFFF,
+    1px 1px 25px 0px #434343;
+}
+
+
+.ceil_active:hover {
     cursor: pointer;
 }
 
@@ -27,3 +41,4 @@
 .ceil_left-bottom {
     border-radius: 0 0 0 30px;
 }
+

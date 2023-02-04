@@ -1,67 +1,32 @@
-let ArrCeils: NodeList = document.querySelectorAll(".ceil");
-let Gamers = ['X', 'O'];
-let WinnerCombination: Array<number> = [];
 
-function startGame():void {
-    start(ArrCeils);
-}
+import start from './components/logicGame.js';
+import {closePopupWinner} from './components/popupWinner.js';
 
-function clearBoard(ceils: NodeList): void{
-    // @ts-ignore
-    for (let cell of ceils) {
-        cell.textContent = '';
-        cell.removeEventListener;
+let ceils: NodeList = document.querySelectorAll(".ceil");
+let buttonStart = document.querySelector(".button_start");
+let buttonClosePopupWinnner = document.querySelector(".popup__button-exit_winner");
+let popupWinnner = document.querySelector(".popup__window");
+
+
+// ф-ция обработчик клика на кнопку старта
+function handleClickButtonStart() {
+    start();
+    buttonStart.classList.add("button_start_active");
+    for (let i: number = 0; i < ceils.length; i++) {
+        // @ts-ignore
+        ceils[i].classList.add("ceil_active");
     }
 }
 
-function checkWinner (ceils: NodeList): boolean {
-    let combs = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6],
-    ];
-    // проверка на выйгрышную комбу
-    for (let i = 0; i < combs.length; i++) {
-        if (
-            ceils[combs[i][0]].textContent == ceils[combs[i][1]].textContent &&
-            ceils[combs[i][1]].textContent == ceils[combs[i][2]].textContent &&
-            ceils[combs[i][0]].textContent != ''
-        ) {
-            WinnerCombination = combs[i];
-            return true;
-        }
-    }
-    return false;
+// ф-ция обработчик закрытия попапа победителя
+function handleClosePopupWinner() {
+    closePopupWinner();
 }
 
-function start(ceils: NodeList) {
-    let ENDOFGAME: number = 9;
-    let i: number = 0;
-    // @ts-ignore
-    for (let cell of ceils) {
-        cell.addEventListener('click', function step() {
-            console.log(i);
-            if (this.textContent == '') {
-                this.textContent = Gamers[i % 2];
-                this.removeEventListener('click', step);
-            }
-            if (checkWinner(ceils)) {
-                alert(this.textContent + "winner!");
 
-                clearBoard(ceils);
-                return;
-            }
-            i++
-            if (i == ENDOFGAME) {
-                alert("DRAW");
-                clearBoard(ceils);
-                return;
-            }
-        });
-    }
-}
+
+// слушатель на кнопку старта
+buttonStart.addEventListener("click", handleClickButtonStart);
+
+// слушатель на закрытие попапа после победы (popupWinner)
+buttonClosePopupWinnner.addEventListener("click", handleClosePopupWinner);
